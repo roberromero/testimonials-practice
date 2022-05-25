@@ -1,11 +1,6 @@
 /* # Front-end Style Guide
 
-## Layout
 
-The designs were created to the following widths:
-
-- Mobile: 375px
-- Desktop: 1440px
 
 
 
@@ -22,20 +17,79 @@ Note for text colors:
     box-sizing: border-box;
     font-family: 'Barlow Semi Condensed', sans-serif;
     margin: 0;
+    font-weight: 500;
     /* font-family: var(--fuente-principal); */
     /*COLORS*/
-    --very-dark-grayish-blue: hsl(217, 19%, 35%);
-    --very-dark-blackish-blue: hsl(219, 29%, 14%);
-    --white: hsl(0, 0%, 100%);
-    --very-dark-grayish-blue: hsl(217, 19%, 35%);
     --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --white: hsl(0, 0%, 100%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
     --light-gray: hsl(0, 0%, 81%);
+
     --light-grayish-blue: hsl(210, 46%, 95%);
+   
     /*FONT-SIZES*/
-    --big-font-size: 600;
-    --small-font-size: 500;
+    --big-font-weight: 600;
 }
 
+
+
 body{
-    font-size: 13px;    
+    font-size: 12px;
+    min-width: 375px;
+    max-width: 1440px;
+    background-image: url(img/backgroung-testimonials.png);
+    background-position: center;
+   
+}
+.grid-container{
+    border: 2px solid red;
+    display: grid;
+    width: 95%;
+    margin: 10px auto;
+    /* First line "rows" second line "columns" */
+    grid-template: repeat(5, 1fr) / 1fr;
+    /* "gap" property could take two values (1.row/2.column) */
+    gap: 20px; 
+    
+
+}
+.grid-item{
+    border: 2px solid;
+    padding: 20px 30px;
+}
+
+.moderate-violet{
+    background-color: var(--moderate-violet);
+    color: var(--white);
+}
+.very-dark-grayish-blue{
+    background-color: var(--very-dark-grayish-blue);
+    color: var(--white);
+}
+.white{
+    background-color: var(--white);
+    color: var(--very-dark-blackish-blue);
+}
+.very-dark-blackish-blue{
+    background-color: var(--very-dark-blackish-blue);
+    color: var(--white);
+}
+.light-gray{
+    background-color: var(--light-gray);
+    color: var(--white);
+}
+
+.head-card{
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+}
+.head-card > p {
+    margin-left: 20px;
+}
+.big-font{
+    font-size: var(--big-font-weight);
+    font-size: 20px;
+    padding-bottom: 20px;
 }
