@@ -37,7 +37,7 @@ Note for text colors:
 body{
     font-size: 12px;
     min-width: 375px;
-    max-width: 1440px;
+    /* max-width: 1440px; */
     background-image: url(img/backgroung-testimonials.png);
     background-position: center;
    
@@ -45,18 +45,19 @@ body{
 .grid-container{
     border: 2px solid red;
     display: grid;
-    width: 95%;
+    width: 80%;
     margin: 10px auto;
     /* First line "rows" second line "columns" */
-    grid-template: repeat(5, 1fr) / 1fr;
+    grid-template: repeat(5, auto) / 1fr;
     /* "gap" property could take two values (1.row/2.column) */
     gap: 20px; 
     
 
 }
 .grid-item{
-    border: 2px solid;
-    padding: 20px 30px;
+    padding: 40px 40px;
+    border-radius: 10px;
+    
 }
 
 .moderate-violet{
@@ -75,10 +76,7 @@ body{
     background-color: var(--very-dark-blackish-blue);
     color: var(--white);
 }
-.light-gray{
-    background-color: var(--light-gray);
-    color: var(--white);
-}
+
 
 .head-card{
     display: flex;
@@ -92,4 +90,20 @@ body{
     font-size: var(--big-font-weight);
     font-size: 20px;
     padding-bottom: 20px;
+    letter-spacing: 1px;
+}
+.body-card{
+    padding-right: 30px;
+    letter-spacing: 0.5px;
+
+}
+.light-grey{
+    color: var(--light-gray);
+}
+.dark-grey{
+    color: hsl(0deg 3% 49%);
+}
+.head-card__img{
+    border-radius: 50%;
+    width: 35px;
 }
