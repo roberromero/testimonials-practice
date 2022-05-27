@@ -1,23 +1,10 @@
-/* # Front-end Style Guide
-
-
-
-
-
-Note for text colors:
-
-1. "Verified Graduate" has the same color as the person's name with 50% opacity
-2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
-
-
-
- */
+/* MOBILE FIRST DESIGN */
  *{  
     text-decoration: none;
     box-sizing: border-box;
     font-family: 'Barlow Semi Condensed', sans-serif;
     margin: 0;
-    font-weight: 500;
+    
     /* font-family: var(--fuente-principal); */
     /*COLORS*/
     --moderate-violet: hsl(263, 55%, 52%);
@@ -40,26 +27,10 @@ body{
     /* max-width: 1440px; */
     background-image: url(img/backgroung-testimonials.png);
     background-position: center;
+    
    
 }
-.grid-container{
-    border: 2px solid red;
-    display: grid;
-    width: 80%;
-    margin: 10px auto;
-    /* First line "rows" second line "columns" */
-    grid-template: repeat(5, auto) / 1fr;
-    /* "gap" property could take two values (1.row/2.column) */
-    gap: 20px; 
-    
-
-}
-.grid-item{
-    padding: 40px 40px;
-    border-radius: 10px;
-    
-}
-
+/* COLORS */
 .moderate-violet{
     background-color: var(--moderate-violet);
     color: var(--white);
@@ -76,6 +47,57 @@ body{
     background-color: var(--very-dark-blackish-blue);
     color: var(--white);
 }
+.light-grey{
+    color: var(--light-gray);
+    font-weight: 500;
+}
+.dark-grey{
+    color: hsl(0deg 3% 49%);
+    font-weight: 500;
+}
+
+/*----------*/
+
+/*MOBILE FIRST*/
+
+.grid-container{
+    display: grid;
+    width: 80%;
+    margin: 10px auto;
+    /* First line "rows" second line "columns" */
+    /* grid-template: repeat(5, auto) / 1fr; */
+    grid-template-rows: repeat(5, auto);
+    /* "gap" property could take two values (1.row/2.column) */
+    grid-template-areas: "one" "two" "three" "four" "five";
+    gap: 1.5rem; 
+}
+.grid-item:nth-child(1){
+    grid-area: one;
+}
+.grid-item:nth-child(2){
+    grid-area: two;
+}
+.grid-item:nth-child(3){
+    grid-area: three;
+}
+.grid-item:nth-child(4){
+    grid-area: four;
+}
+.grid-item:nth-child(5){
+    grid-area: five;
+}
+
+.grid-item{
+    padding: 30px 30px;
+    border-radius: 10px;
+    box-shadow: 1px 0px 15px 6px rgba(128,128,128,0.97);
+}
+.grid-item-quote{
+    background-image: url("img/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
 
 
 .head-card{
@@ -86,24 +108,46 @@ body{
 .head-card > p {
     margin-left: 20px;
 }
+.head-card__img{
+    border-radius: 50%;
+    width: 35px;
+}
 .big-font{
-    font-size: var(--big-font-weight);
     font-size: 20px;
     padding-bottom: 20px;
-    letter-spacing: 1px;
+    font-weight: var(--big-font-weight);
 }
 .body-card{
     padding-right: 30px;
     letter-spacing: 0.5px;
+}
 
+@media only screen and (min-width: 737px){
+    .grid-container{
+        grid-template-areas:  'one one three'
+                              'two two four'
+                              'five five four';
+    }
+ 
 }
-.light-grey{
-    color: var(--light-gray);
-}
-.dark-grey{
-    color: hsl(0deg 3% 49%);
-}
-.head-card__img{
-    border-radius: 50%;
-    width: 35px;
+
+@media only screen and (min-width: 950px){
+      .grid-container{
+        /* if "grid-template" is used First line "rows" second line "columns" */
+        /* grid-template-columns: repeat(4, 1fr); */
+        grid-template-areas:  'one one two five'
+                            'three four four five';
+        width: 80%;
+    }
+ 
+    .grid-col-span-2{
+        grid-column: span 2;
+    }
+    .grid-item:last-child{
+        grid-column: 4;
+        /* grid-row-start: 1;
+        grid-row-end: 3; */
+        grid-row: 1 / span 2;
+    }
+    
 }
