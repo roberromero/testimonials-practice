@@ -137,7 +137,8 @@ body{
         /* grid-template-columns: repeat(4, 1fr); */
         grid-template-areas:  'one one two five'
                             'three four four five';
-        width: 80%;
+        width: 95%;
+        grid-auto-columns: 1fr;
     }
  
     .grid-col-span-2{
